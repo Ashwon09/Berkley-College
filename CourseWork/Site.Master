@@ -1,0 +1,156 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="CourseWork.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - My ASP.NET Application</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    
+    <style type: "text/css">
+        @import url('http://fonts.cdnfonts.com/css/comfort');
+        * {
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            list-style:none;
+            text-decoration: none;
+            font-size :16px;
+font-family: 'Comfortaa';
+                                                
+        }
+
+        body {
+        background:#e3cfcf;
+        }
+
+        .wrapper {
+            display:flex;
+            position:relative;
+        }
+
+        .wrapper .sidebar {
+            position:fixed;
+            width: 270px;
+            height: 100%;
+            background:#011a38;
+            padding: 30px 0;
+
+        }
+
+        .wrapper .sidebar h1 {
+            color: #fff;
+            /*text-transform: uppercase;*/
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .wrapper .sidebar ul li {
+            color: #262626;
+            padding: 15px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            border-top: 1px solid rgba(225,225,225,0.05);
+
+        }
+        .wrapper .sidebar ul li a{
+            color: #fff;
+            display: block;
+            text-decoration: none;
+
+        }
+
+        .wrapper .sidebar ul li:hover {
+            background: #4d010f;
+            text-decoration: none;
+        }
+
+        .body-content {
+            margin-left:30rem;
+        }
+       
+    </style>
+
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+               
+
+        </asp:ScriptManager>
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" runat="server" href="~/">Berkeley College</a>
+                   
+                </div>
+                <div class="navbar-collapse collapse">
+                   <%-- <ul class="nav navbar-nav">
+                        <li><a runat="server" href="~/student_details">Student details</a></li>
+                        <li><a runat="server" href="~/student_details">Teacher details</a></li>
+                        <li><a runat="server" href="~/address_details">Address Details</a></li>
+                        <li><a runat="server" href="~/module_details">Module Details</a></li>
+                        <li><a runat="server" href="~/department_details">Department Details</a></li>
+
+                    </ul>--%>
+                </div>
+            </div>
+        </div>
+         <div>
+            <div class="wrapper">
+                <div class="sidebar">
+                    
+                   <ul>
+                       <li><a runat="server" href="~/person_details">Person Details</a></li>
+                        <li><a runat="server" href="~/student_details">Student Details</a></li>
+                         <li><a runat="server" href="~/department_details">Department Details</a></li>
+                         <li><a runat="server" href="~/teacher_details">Teacher Details</a></li>
+                         <li><a runat="server" href="~/address_details">Address Details</a></li>
+                         <li><a runat="server" href="~/module_details">Module Details</a></li>
+                         <li><a runat="server" href="~/teacher_module">Teacher Module Mapping</a></li>
+                          <li><a runat="server" href="~/student_fee">Student Fee Payment </a></li>
+                        <li><a runat="server" href="~/student_result">Student Assignment Result </a></li>
+                     </ul> 
+                        </div>
+                </div>
+        </div>
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+     
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - Designed By Ashwon Bajracharya</p>
+            </footer>
+            </div>
+      
+
+    </form>
+</body>
+</html>
